@@ -1,0 +1,28 @@
+<h2 class="mb-5">Nuevo Pedido</h2>
+<div class="row row-cols-3 justify-content-center">
+<form form [formGroup]="form" (ngSubmit)="create()">
+    <div class="mb-3">
+        <label for="quantity">Cantidad</label>
+        <input id="quantity" type="text" placeholder="Cantidad" class="form-control"
+        formControlName="quantity">
+    </div>
+    <div class="mb-3">
+        <label for="date">Fecha</label>
+        <input id="date" type="date" placeholder="Fecha" class="form-control"
+        formControlName="date">
+    </div>
+    <div class="mb-3">
+        <label for="total">Total</label>
+        <input id="total" type="text" placeholder="Total" class="form-control"
+        formControlName="total">
+    </div>
+    <div style="display: flex; gap: 10px;" class="text-end">
+        <button type="button" class="btn btn-primary" routerLink="/">
+            Cancelar
+        </button>
+        <button class="btn btn-danger">
+            Crear Pedido
+        </button>
+    </div>
+</form>
+</div>

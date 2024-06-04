@@ -1,0 +1,43 @@
+<h2 class="mb-5">Mis Clientes</h2>
+
+<div class="text-end">
+    <button class="btn btn-success" routerLink="/">
+        Menu
+    </button>
+    <button class="btn btn-primary" routerLink="/client">
+        Nuevo cliente
+    </button>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Direccion</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(client of clients; track client.id){
+        <tr>
+            <td>{{client.id}}</td>
+            <td>{{client.name}}</td>
+            <td>{{client.lastname}}</td>
+            <td>{{client.address}}</td>
+            <td>{{client.email}}</td>
+            <td>{{client.telefono}}</td>
+            <td class="text-end">
+                <div class="btn-group">
+                    <button class="btn btn-danger" (click)="deleteClient(client)">
+                        Eliminar
+                    </button>
+                </div>
+             </td>
+        </tr>    
+        }
+    </tbody>
+</table>
